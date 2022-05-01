@@ -1,0 +1,23 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "study project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nardosha/CHAT.git"
+  },
+  "author": "Natosha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nardosha/CHAT/issues"
+  },
+  "homepage": "https://github.com/Nardosha/CHAT#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "prettier": "^2.6.2"
+  }
+}
