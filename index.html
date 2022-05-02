@@ -13,8 +13,11 @@
         <div class="header__container _container">
           <nav class="header__menu">
             <button class="header__button _btn">
-              <a href="#" class="header__link">Настройки</a>
+              <a href="#popup_auth" class="header__link">Настройки</a>
             </button>
+            <div class="header__username">
+              <a href="#">Катя</a>
+            </div>
             <button class="header__button _btn">
               <a href="#" class="header__link">Выйти</a>
             </button>
@@ -26,53 +29,58 @@
           <div class="main__messages-list message">
             <div class="message__item own">
               <div class="message__avatar">
-                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar">
+                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar" />
               </div>
               <div class="message__content">
-                <div class="message__user">
-                  user_1
-                </div>
+                <div class="message__user">user_1</div>
                 <div class="message__text">
                   Hello! How are you?
-                </div>
-                <div class="message__time">
-                  10:00
+                  <span class="message__time"> 10:00 </span>
                 </div>
               </div>
             </div>
             <div class="message__item message__item">
               <div class="message__avatar">
-                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar">
+                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar" />
               </div>
               <div class="message__content">
-                <div class="message__user">
-                  user_2
-                </div>
+                <div class="message__user">user_2</div>
                 <div class="message__text">
                   It's okey!
-                </div>
-                <div class="message__time">
-                  10:05
+                  <span class="message__time"> 10:05 </span>
                 </div>
               </div>
             </div>
-            <div class="message__item own">
-              <div class="message__avatar">
-                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar">
-              </div>
-              <div class="message__content">
-                <div class="message__user">
-                  user_1
-                </div>
-                <div class="message__text">
-                  Me too :)
-                </div>
-                <div class="message__time">
-                  10:15
-                </div>
-              </div>
-            </div>
+          </div>
 
+          <div id="popup_auth" class="popup popup-auth">
+            <div class="popup__container popup-auth__container">
+            <div class="popup__body popup-auth__body">
+              
+              
+              <div class="popup__header popup-auth__header">
+                <div class="popup__header_title">Авторизация</div>
+                <div class="popup__header_btn btn-close">
+                  <a href="#" class="popup-auth__btn-link">X</a>
+                </div>
+              </div>
+              
+              <div class="popup__content popup-auth__content">
+                <h3 class="popup__content_title">Почта:</h3>
+                <form action="" class="popup__content_form popup-auth__form">
+                  <input
+                    class="popup-auth__form_input"
+                    type="email"
+                    name="auth-input"
+                    id="auth-input"
+                  />
+                  <div class="popup-auth__form_btn">
+                    <button class="popup-auth__btn-submit">Получить код</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
           </div>
           
         </div>
@@ -88,7 +96,9 @@
               />
             </div>
             <div class="form__button">
-              <button type="submit" class="form__button-submit _btn">Отправить</button>
+              <button type="submit" class="form__button-submit _btn">
+                Отправить
+              </button>
             </div>
           </form>
         </div>
