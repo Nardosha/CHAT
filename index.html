@@ -9,100 +9,260 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="header__container _container">
-          <nav class="header__menu">
-            <button class="header__button _btn">
-              <a href="#popup_auth" class="header__link">Настройки</a>
-            </button>
-            <div class="header__username">
-              <a href="#">Катя</a>
-            </div>
-            <button class="header__button _btn">
-              <a href="#" class="header__link">Выйти</a>
-            </button>
-          </nav>
-        </div>
-      </header>
-      <main class="main">
-        <div class="main__container _container">
-          <div class="main__messages-list message">
-            <div class="message__item own">
-              <div class="message__avatar">
-                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar" />
+      <div class="layout">
+        <header class="header">
+          <div class="header__container">
+            <nav id="header" class="header__menu">
+              <button class="header__button _btn">
+                <a href="#popup-auth" class="header__link popup-link"
+                  >Настройки</a
+                >
+              </button>
+              <div class="header__username">
+                <a href="#">Катя</a>
               </div>
-              <div class="message__content">
-                <div class="message__user">user_1</div>
-                <div class="message__text">
-                  Hello! How are you?
-                  <span class="message__time"> 10:00 </span>
-                </div>
-              </div>
-            </div>
-            <div class="message__item message__item">
-              <div class="message__avatar">
-                <img src="src/assets/icons/favicon/icon-96.png" alt="avatar" />
-              </div>
-              <div class="message__content">
-                <div class="message__user">user_2</div>
-                <div class="message__text">
-                  It's okey!
-                  <span class="message__time"> 10:05 </span>
-                </div>
-              </div>
-            </div>
+              <button class="header__button _btn">
+                <a href="#popup-settings" class="header__link">Выйти</a>
+              </button>
+            </nav>
           </div>
-
-          <div id="popup_auth" class="popup popup-auth">
-            <div class="popup__container popup-auth__container">
-            <div class="popup__body popup-auth__body">
-              
-              
-              <div class="popup__header popup-auth__header">
-                <div class="popup__header_title">Авторизация</div>
-                <div class="popup__header_btn btn-close">
-                  <a href="#" class="popup-auth__btn-link">X</a>
-                </div>
-              </div>
-              
-              <div class="popup__content popup-auth__content">
-                <h3 class="popup__content_title">Почта:</h3>
-                <form action="" class="popup__content_form popup-auth__form">
-                  <input
-                    class="popup-auth__form_input"
-                    type="email"
-                    name="auth-input"
-                    id="auth-input"
-                  />
-                  <div class="popup-auth__form_btn">
-                    <button class="popup-auth__btn-submit">Получить код</button>
+        </header>
+        <main class="main">
+          <div class="main__container">
+            <div class="main__messages-list message">
+              <div class="message__container">
+                <div class="message__item own">
+                  <div class="message__avatar">
+                    <img
+                      src="src/assets/icons/favicon/icon-96.png"
+                      alt="avatar"
+                    />
                   </div>
+                  <div class="message__content">
+                    <div class="message__user">user_1</div>
+                    <div class="message__text">
+                      Hello! How are you?
+                      <span class="message__time"> 10:00 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="message__item">
+                  <div class="message__avatar">
+                    <img
+                      src="src/assets/icons/favicon/icon-96.png"
+                      alt="avatar"
+                    />
+                  </div>
+                  <div class="message__content">
+                    <div class="message__user">user_2</div>
+                    <div class="message__text">
+                      It's okey!
+                      <span class="message__time"> 10:05 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="message__item own">
+                  <div class="message__avatar">
+                    <img
+                      src="src/assets/icons/favicon/icon-96.png"
+                      alt="avatar"
+                    />
+                  </div>
+                  <div class="message__content">
+                    <div class="message__user">user_1</div>
+                    <div class="message__text">
+                      Hello! How are you?
+                      <span class="message__time"> 10:00 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="message__item">
+                  <div class="message__avatar">
+                    <img
+                      src="src/assets/icons/favicon/icon-96.png"
+                      alt="avatar"
+                    />
+                  </div>
+                  <div class="message__content">
+                    <div class="message__user">user_2</div>
+                    <div class="message__text">
+                      It's okey!
+                      <span class="message__time"> 10:05 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="message__item own">
+                  <div class="message__avatar">
+                    <img
+                      src="src/assets/icons/favicon/icon-96.png"
+                      alt="avatar"
+                    />
+                  </div>
+                  <div class="message__content">
+                    <div class="message__user">user_1</div>
+                    <div class="message__text">
+                      Hello! How are you?
+                      <span class="message__time"> 10:00 </span>
+                    </div>
+                  </div>
+                </div>
+                <template id="message-template">
+                  <div class="message__item own">
+                    <div class="message__avatar">
+                      <img
+                        src="src/assets/icons/favicon/icon-96.png"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div class="message__content">
+                      <div class="message__user">user_2</div>
+                      <div class="message__text">
+                        It's okey!
+                      </div>
+                      <span class="message__time"> 10:05 </span>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footer__container">
+                <form action="" id="form-message" class="footer__form form">
+                  <div class="form__input">
+                    <input
+                      id="input-message"
+                      type="text"
+                      class="form__input-field"
+                      placeholder="Сообщение..."
+                    />
+                  </div>
+                  <!--                  <div class="form__button">-->
+                  <button
+                    id="button-message"
+                    type="submit"
+                    class="form__button-submit _btn"
+                  >
+                    Отправить
+                  </button>
+                  <!--                  </div>-->
                 </form>
               </div>
             </div>
+
+            <div id="popup-auth" class="popup popup-auth">
+              <div class="popup__container popup-auth__container">
+                <div class="popup__body popup-auth__body">
+                  <div class="popup__header popup-auth__header">
+                    <div class="popup__header_title">Авторизация</div>
+                    <div class="popup__header_btn btn-close">
+                      <a href="#header" class="popup-auth__btn-link popup-close"
+                        >X</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="popup__content popup-auth__content">
+                    <h3 class="popup__content_title">Почта:</h3>
+                    <form
+                      action=""
+                      class="popup__content_form popup-auth__form"
+                    >
+                      <input
+                        class="popup-auth__form_input"
+                        type="email"
+                        name="auth-input"
+                        id="input-logout"
+                      />
+                      <div class="popup-auth__form_btn">
+                        <a
+                          href="#popup-confirm"
+                          class="popup-auth__btn-submit popup-link"
+                          >Получить код</a
+                        >
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="popup-confirm" class="popup popup-auth">
+              <div class="popup__container popup-auth__container">
+                <div class="popup__body popup-auth__body">
+                  <div class="popup__header popup-auth__header">
+                    <div class="popup__header_title">Авторизация</div>
+                    <div class="popup__header_btn btn-close">
+                      <a href="#header" class="popup-auth__btn-link popup-close"
+                        >X</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="popup__content popup-auth__content">
+                    <h3 class="popup__content_title">Почта:</h3>
+                    <form
+                      action=""
+                      class="popup__content_form popup-auth__form"
+                    >
+                      <input
+                        class="popup-auth__form_input"
+                        type="email"
+                        name="auth-input"
+                        id="input-confirm"
+                      />
+                      <div class="popup-auth__form_btn">
+                        <a
+                          href="#popup-confirm"
+                          class="popup-auth__btn-submit popup-link"
+                          >Получить код</a
+                        >
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="popup-settings" class="popup popup-auth">
+              <div class="popup__container popup-auth__container">
+                <div class="popup__body popup-auth__body">
+                  <div class="popup__header popup-auth__header">
+                    <div class="popup__header_title">Авторизация</div>
+                    <div class="popup__header_btn btn-close">
+                      <a href="#header" class="popup-auth__btn-link popup-close"
+                        >X</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="popup__content popup-auth__content">
+                    <h3 class="popup__content_title">Почта:</h3>
+                    <form
+                      action=""
+                      class="popup__content_form popup-auth__form"
+                    >
+                      <input
+                        class="popup-auth__form_input"
+                        type="email"
+                        name="auth-input"
+                        id="input-settings"
+                      />
+                      <div class="popup-auth__form_btn">
+                        <a
+                          href="#popup-confirm"
+                          class="popup-auth__btn-submit popup-link"
+                          >Получить код</a
+                        >
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
-        </div>
-      </main>
-      <footer class="footer">
-        <div class="footer__container _container">
-          <form action="" class="footer__form form">
-            <div class="form__input">
-              <input
-                type="text"
-                class="form__input-field"
-                placeholder="Сообщение..."
-              />
-            </div>
-            <div class="form__button">
-              <button type="submit" class="form__button-submit _btn">
-                Отправить
-              </button>
-            </div>
-          </form>
-        </div>
-      </footer>
+        </main>
+        <div class="scroll-down__button">Вниз</div>
+      </div>
     </div>
     <script src="app.js" type="module"></script>
   </body>
