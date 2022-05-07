@@ -8,11 +8,11 @@ function getPopupName(link) {
 
 function openPopup(currentPopup) {
   if (!currentPopup) return;
-  const activePopup = document.querySelector(".popup._open");
-
-  if (activePopup) {
-    closePopup(activePopup);
-  }
+  // const activePopup = document.querySelector(".popup._open");
+  //
+  // if (activePopup) {
+  //   closePopup(activePopup);
+  // }
 
   currentPopup.classList.add("_open");
 }
@@ -26,7 +26,7 @@ function closePopup(currentPopup) {
 }
 
 function ready() {
-    openPopup(UI.POPUP_AUTH)
+  openPopup(UI.POPUP_AUTH);
 }
 
-export { getPopupName, openPopup, closePopup, ready};
+export { getPopupName, openPopup, closePopup, ready };

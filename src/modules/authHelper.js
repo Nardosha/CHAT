@@ -4,9 +4,11 @@ import { openPopup } from "./popup.js";
 function authHandler(e) {
   console.log("AUTH");
   e.preventDefault();
-  const email = UI.AUTH_INPUT.value;
+  const email = UI.AUTH_INPUT.value.trim()
+
   new Promise((resolve, reject) => {
-    resolve(authUser(email));
+    // resolve(authUser(email));
+    resolve(true);
   })
     .then((res) => {
       console.log(res);

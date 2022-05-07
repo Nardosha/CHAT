@@ -116,9 +116,7 @@
                     </div>
                     <div class="message__content">
                       <div class="message__user">user_2</div>
-                      <div class="message__text">
-                        It's okey!
-                      </div>
+                      <div class="message__text">It's okey!</div>
                       <span class="message__time"> 10:05 </span>
                     </div>
                   </div>
@@ -136,15 +134,15 @@
                       placeholder="Сообщение..."
                     />
                   </div>
-                  <!--                  <div class="form__button">-->
-                  <button
-                    id="button-message"
-                    type="submit"
-                    class="form__button-submit _btn"
-                  >
-                    Отправить
-                  </button>
-                  <!--                  </div>-->
+                  <div class="form__button">
+                    <button
+                      id="button-message"
+                      type="submit"
+                      class="form__button-submit _btn"
+                    >
+                      Отправить
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -164,6 +162,7 @@
                   <div class="popup__content popup-auth__content">
                     <h3 class="popup__content_title">Почта:</h3>
                     <form
+                      id="form-auth"
                       action=""
                       class="popup__content_form popup-auth__form"
                     >
@@ -171,14 +170,12 @@
                         class="popup-auth__form_input"
                         type="email"
                         name="auth-input"
-                        id="input-logout"
+                        id="input-auth"
                       />
                       <div class="popup-auth__form_btn">
-                        <a
-                          href="#popup-confirm"
-                          class="popup-auth__btn-submit popup-link"
-                          >Получить код</a
-                        >
+                        <button type="submit" class="popup-auth__btn-submit">
+                          Получить код
+                        </button>
                       </div>
                     </form>
                   </div>
@@ -199,7 +196,7 @@
                   </div>
 
                   <div class="popup__content popup-auth__content">
-                    <h3 class="popup__content_title">Почта:</h3>
+                    <h3 class="popup__content_title">Код:</h3>
                     <form
                       action=""
                       class="popup__content_form popup-auth__form"
@@ -208,14 +205,12 @@
                         class="popup-auth__form_input"
                         type="email"
                         name="auth-input"
-                        id="input-confirm"
+                        id="input-key"
                       />
                       <div class="popup-auth__form_btn">
-                        <a
-                          href="#popup-confirm"
-                          class="popup-auth__btn-submit popup-link"
-                          >Получить код</a
-                        >
+                        <button type="submit" class="popup-auth__btn-submit">
+                          Войти
+                        </button>
                       </div>
                     </form>
                   </div>
