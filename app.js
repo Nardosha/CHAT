@@ -1,13 +1,14 @@
 import { getPopupName, closePopup, ready } from "./src/modules/popup.js";
 import { UI } from "./src/modules/variables.js";
 import {submitHandler} from "./src/modules/views.js";
+import {authHandler} from "./src/modules/authHelper.js";
 
 
 UI.POPUP_LINKS.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    getPopupName(link);
-  });
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        getPopupName(link);
+    });
 });
 
 UI.POPUP_CLOSE_ICON.forEach(closeIcon => {
@@ -18,5 +19,8 @@ UI.POPUP_CLOSE_ICON.forEach(closeIcon => {
     })
 })
 
+document.addEventListener('DOMContentLoaded', ready)
+
 UI.MESSAGE_FORM.addEventListener('submit', submitHandler)
 
+UI.AUTH_FORM.addEventListener("submit", authHandler)
