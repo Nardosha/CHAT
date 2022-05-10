@@ -34,14 +34,10 @@ export const UI = {
   },
 };
 
-export const defaultUserName = {
-  NAME: "username",
-};
-
 export const URL = {
   AUTH: "https://mighty-cove-31255.herokuapp.com/api/user",
   USER_INFO: "https://mighty-cove-31255.herokuapp.com/api/user/me",
-  MESSAGE: "https://mighty-cove-31255.herokuapp.com/api/user",
+  HISTORY: "https://mighty-cove-31255.herokuapp.com/api/messages",
   SOCKET: "https://mighty-cove-31255.herokuapp.com/api/user",
 };
 

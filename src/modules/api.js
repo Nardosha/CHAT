@@ -50,11 +50,29 @@ export async function getUserInfo(token) {
 
   try {
     const response = await fetch(URL.USER_INFO, options);
-    const data = response.json();
+    const data = await response.json();
     return data;
   } catch (e) {
     alert(e);
     console.log(`Ошибка: ${e}`);
   }
+}
 
+export async function getMessageHistory(token) {
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  const options = {
+    method: "GET",
+    headers,
+  };
+
+  try {
+    const response = await fetch(URL.HISTORY, options);
+    const data = await response.json();
+    return data.messages.splice(0, 5);
+  } catch (e) {
+    alert(e);
+    console.log(`Ошибка: ${e}`);
+  }
 }
