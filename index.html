@@ -14,11 +14,11 @@
           <div class="header__container">
             <nav id="header" class="header__menu">
               <button class="header__button _btn">
-                <a href="#popup-auth" class="header__link popup-link"
+                <a href="#popup-settings" class="header__link popup-link"
                   >Настройки</a
                 >
               </button>
-              <div class="header__username">
+              <div class="header__username companion_nickname">
                 <a href="#">Катя</a>
               </div>
               <button class="header__button _btn">
@@ -39,7 +39,7 @@
                     />
                   </div>
                   <div class="message__content">
-                    <div class="message__user">user_1</div>
+                    <div class="message__user nickname">user_1</div>
                     <div class="message__text">
                       Hello! How are you?
                       <span class="message__time"> 10:00 </span>
@@ -54,7 +54,7 @@
                     />
                   </div>
                   <div class="message__content">
-                    <div class="message__user">user_2</div>
+                    <div class="message__user companion_nickname">Катя</div>
                     <div class="message__text">
                       It's okey!
                       <span class="message__time"> 10:05 </span>
@@ -69,7 +69,7 @@
                     />
                   </div>
                   <div class="message__content">
-                    <div class="message__user">user_1</div>
+                    <div class="message__user nickname">user_1</div>
                     <div class="message__text">
                       Hello! How are you?
                       <span class="message__time"> 10:00 </span>
@@ -84,7 +84,7 @@
                     />
                   </div>
                   <div class="message__content">
-                    <div class="message__user">user_2</div>
+                    <div class="message__user companion_nickname">Катя</div>
                     <div class="message__text">
                       It's okey!
                       <span class="message__time"> 10:05 </span>
@@ -99,7 +99,7 @@
                     />
                   </div>
                   <div class="message__content">
-                    <div class="message__user">user_1</div>
+                    <div class="message__user nickname">user_1</div>
                     <div class="message__text">
                       Hello! How are you?
                       <span class="message__time"> 10:00 </span>
@@ -115,7 +115,7 @@
                       />
                     </div>
                     <div class="message__content">
-                      <div class="message__user">user_2</div>
+                      <div class="message__user companion_nickname">user_1</div>
                       <div class="message__text">It's okey!</div>
                       <span class="message__time"> 10:05 </span>
                     </div>
@@ -167,7 +167,7 @@
                       class="popup__content_form popup-auth__form"
                     >
                       <input
-                        class="popup-auth__form_input"
+                        class="popup-auth__form_input form-input"
                         type="email"
                         name="auth-input"
                         id="input-auth"
@@ -198,13 +198,14 @@
                   <div class="popup__content popup-auth__content">
                     <h3 class="popup__content_title">Код:</h3>
                     <form
+                      id="form_confirm"
                       action=""
                       class="popup__content_form popup-auth__form"
                     >
                       <input
-                        class="popup-auth__form_input"
-                        type="email"
-                        name="auth-input"
+                        class="popup-auth__form_input form-input"
+                        type="text"
+                        name="input-key"
                         id="input-key"
                       />
                       <div class="popup-auth__form_btn">
@@ -217,43 +218,45 @@
                 </div>
               </div>
             </div>
-
+  
+  
             <div id="popup-settings" class="popup popup-auth">
               <div class="popup__container popup-auth__container">
                 <div class="popup__body popup-auth__body">
                   <div class="popup__header popup-auth__header">
-                    <div class="popup__header_title">Авторизация</div>
+                    <div class="popup__header_title">Сменить имя</div>
                     <div class="popup__header_btn btn-close">
                       <a href="#header" class="popup-auth__btn-link popup-close"
-                        >X</a
+                      >X</a
                       >
                     </div>
                   </div>
-
+        
                   <div class="popup__content popup-auth__content">
-                    <h3 class="popup__content_title">Почта:</h3>
+                    <h3 class="popup__content_title">Введите имя:</h3>
                     <form
-                      action=""
-                      class="popup__content_form popup-auth__form"
+                            id="form_settings"
+                            action=""
+                            class="popup__content_form popup-auth__form"
+                            data-action="change-name"
                     >
                       <input
-                        class="popup-auth__form_input"
-                        type="email"
-                        name="auth-input"
-                        id="input-settings"
+                              class="popup-auth__form_input form-input"
+                              type="text"
+                              name="input-nickname"
+                              id="input-nickname"
                       />
                       <div class="popup-auth__form_btn">
-                        <a
-                          href="#popup-confirm"
-                          class="popup-auth__btn-submit popup-link"
-                          >Получить код</a
-                        >
+                        <button type="submit" class="popup-auth__btn-submit">
+                          Войти
+                        </button>
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
         </main>
         <div class="scroll-down__button">Вниз</div>

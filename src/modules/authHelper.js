@@ -1,38 +1,25 @@
 import { UI } from "./variables.js";
-import { openPopup } from "./popup.js";
 
-function authHandler(e) {
-  console.log("AUTH");
-  e.preventDefault();
-  const email = UI.AUTH_INPUT.value.trim()
-
-  new Promise((resolve, reject) => {
-    // resolve(authUser(email));
-    resolve(true);
-  })
-    .then((res) => {
-      console.log(res);
-      openPopup(UI.POPUP_KEY);
-    })
-    .catch((e) => {
-      alert("Ошибка авторизации!");
-      console.log(e);
-    });
+export function getInputValue(e) {
+  const input = e.target.querySelector(".form-input");
+  const value = input.value;
+  if (!value) throw new Error("Некорректные данные!");
+  clearInput(input);
+  return value;
 }
 
-async function authUser(email) {
-  const url = "https://mighty-cove-31255.herokuapp.com/api/user";
-
-  const params = {
-    email: email,
-  };
-
-  const response = await fetch(url, {
-    method: "POST",
-    body: new URLSearchParams(params),
-  });
-  const data = await response.json();
-  return data;
+export function clearInput(el) {
+  if (el === UI.POPUPS.AUTH.INPUT || !el) return;
+  el.value = "";
 }
 
-export { authHandler };
+export function saveToLocalStorage(key, data) {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (e) {
+    alert(e);
+    console.log(e);
+  }
+
+  console.log("saveToLocalStorage");
+}

@@ -1,18 +1,48 @@
 export const UI = {
-    BODY: document.querySelector('body'),
+  BODY: document.querySelector("body"),
 
-    POPUP_LINKS: document.querySelectorAll('.popup-link'),
-    POPUP_CLOSE_ICON: document.querySelectorAll('.popup-close'),
-    POPUP_AUTH: document.getElementById('popup-auth'),
-    POPUP_KEY: document.getElementById('popup-confirm'),
+  POPUPS: {
+    LINKS: document.querySelectorAll(".popup-link"),
+    CLOSE_ICON: document.querySelectorAll(".popup-close"),
 
-    AUTH_FORM: document.getElementById('form-auth'),
-    AUTH_INPUT: document.getElementById('input-auth'),
-    KEY_INPUT: document.getElementById('input-key'),
+    AUTH: {
+      POPUP: document.getElementById("popup-auth"),
+      FORM: document.getElementById("form-auth"),
+      INPUT: document.getElementById("input-auth"),
+    },
 
-    MESSAGE_INPUT: document.getElementById('input-message'),
-    MESSAGE_FORM: document.getElementById('form-message'),
+    KEY: {
+      POPUP: document.getElementById("popup-confirm"),
+      FORM: document.getElementById("form_confirm"),
+      INPUT: document.getElementById("input-key"),
+    },
 
-    MESSAGE_CONTAINER: document.querySelector('.message__container'),
-    MESSAGE_TEMPLATE: document.getElementById('message-template'),
-}
+    SETTINGS: {
+      POPUP: document.getElementById("popup-settings"),
+      FORM: document.getElementById("form_settings"),
+      INPUT: document.getElementById("input-nickname"),
+    },
+  },
+
+  MESSAGE: {
+    OWN: document.querySelectorAll(".own"),
+    OWN_NICKNAME: document.querySelectorAll(".nickname"),
+    INPUT: document.getElementById("input-message"),
+    FORM: document.getElementById("form-message"),
+    CONTAINER: document.querySelector(".message__container"),
+    TEMPLATE: document.getElementById("message-template"),
+  },
+};
+
+export const defaultUserName = {
+  NAME: "username",
+};
+
+export const URL = {
+  AUTH: "https://mighty-cove-31255.herokuapp.com/api/user",
+  USER_INFO: "https://mighty-cove-31255.herokuapp.com/api/user/me",
+  MESSAGE: "https://mighty-cove-31255.herokuapp.com/api/user",
+  SOCKET: "https://mighty-cove-31255.herokuapp.com/api/user",
+};
+
+export const usersList = new Map();
