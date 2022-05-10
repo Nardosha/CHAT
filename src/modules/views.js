@@ -2,36 +2,23 @@ import { UI } from "./variables.js";
 
 function submitHandler(e) {
   e.preventDefault();
-  let messageValue = UI.MESSAGE_INPUT.value;
+  let messageValue = UI.MESSAGE.INPUT.value;
   if (!messageValue) return;
 
-  printMessage(messageValue);
+  // printMessage(messageValue);
   scroll();
-  UI.MESSAGE_INPUT.value = "";
-}
-
-function printMessage(text) {
-  const templateText =
-    UI.MESSAGE_TEMPLATE.content.querySelector(".message__text");
-  const templateUsername =
-    UI.MESSAGE_TEMPLATE.content.querySelector(".message__user");
-  const templateDate =
-    UI.MESSAGE_TEMPLATE.content.querySelector(".message__time");
-  const templateAvatar = UI.MESSAGE_TEMPLATE.content.querySelector("img");
-
-  templateText.innerHTML = text;
-  templateUsername.textContent = "Natosha";
-  templateDate.textContent = "15:30";
-
-  const message = UI.MESSAGE_TEMPLATE.content.cloneNode(true);
-  UI.MESSAGE_CONTAINER.append(message);
+  UI.MESSAGE.INPUT.value = "";
 }
 
 function scroll() {
-  const target = UI.MESSAGE_CONTAINER.lastElementChild;
+  const target = UI.MESSAGE.CONTAINER.lastElementChild;
   target.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 
-export { submitHandler };
+function changeNickname(newName) {
+  console.log(Array.from(UI.MESSAGE.OWN_NICKNAME))
+  Array.from(UI.MESSAGE.OWN_NICKNAME).map(name => name.textContent = newName)
+}
 
-export { printMessage, scroll };
+export { submitHandler, scroll, changeNickname };
+
