@@ -2,6 +2,7 @@ import {getPopupName, closePopup, ready, openPopup} from "./src/modules/popup.js
 import { UI } from "./src/modules/variables.js";
 import {submitHandler} from "./src/modules/views.js";
 import {authHandler, saveUserToken, changeNicknameHandler} from "./src/modules/auth.js";
+import {checkAuth} from "./src/modules/authHelper.js";
 
 
 UI.POPUPS.LINKS.forEach((link) => {
@@ -30,7 +31,10 @@ UI.POPUPS.CLOSE_ICON.forEach(closeIcon => {
     })
 })
 
-document.addEventListener('DOMContentLoaded', ready)
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded')
+    checkAuth()
+})
 
 UI.POPUPS.AUTH.FORM.addEventListener("submit", authHandler)
 UI.POPUPS.KEY.FORM.addEventListener("submit", saveUserToken)

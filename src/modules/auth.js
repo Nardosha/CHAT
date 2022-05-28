@@ -1,10 +1,12 @@
-import {UI, usersList} from "./variables.js";
+import {UI, usersList, URL} from "./variables.js";
 import { closePopup, openPopup } from "./popup.js";
 import { getUserInfo, requestAuthUser, requestChangeName, getMessageHistory } from "./api.js";
 import User from "./User.js";
 import { changeNickname, scroll } from "./views.js";
-import { saveToLocalStorage, getInputValue } from "./authHelper.js";
+import { saveToLocalStorage, getInputValue, getToken, saveCookie } from "./authHelper.js";
 import Message from "./Message.js";
+// import Socket from "./socket.js";
+import {socket} from "./socket.js";
 
 async function authHandler(e) {
   console.log("authHandler");
@@ -21,26 +23,30 @@ async function authHandler(e) {
   }
 }
 
-function saveUserToken(e) {
+async function saveUserToken(e) {
+  console.log('saveUserToken')
   e.preventDefault();
   const token = getInputValue(e);
-  document.cookie = token;
 
+  saveCookie(token)
   saveUserInfo(token)
   saveToLocalStorage("user_key", token);
 
   closePopup(UI.POPUPS.KEY.POPUP);
-  console.log("saveUserToken", token);
-  loadMessages(token)
+
+  await loadMessages(token)
+  socket.init();
 }
 
 function loadMessages(token) {
+  console.log("loadMessages");
+
   const data = getMessageHistory(token)
   data.then((res) => {
     console.log(res)
     res.map(message => {
+      console.log(message)
       let newMessage = new Message(message)
-      newMessage.isOwn = isOwner(newMessage.email)
       newMessage.print()
 
       scroll()
@@ -55,13 +61,14 @@ async function changeNicknameHandler(e) {
   if (!newName) return;
 
   try {
-    const token = document.cookie;
+    //TODO: need some validation method!
+    changeNickname(newName);
+    const token = getToken()
     const response = await requestChangeName(newName, token);
 
     const user = usersList.get(token);
     user.setNewName(response.name);
     user.setLocal()
-    changeNickname(response.name);
 
     console.log("changeNicknameHandler", user);
   } catch (e) {
@@ -79,6 +86,7 @@ function isOwner(email) {
 }
 
 async function saveUserInfo(token) {
+  console.log('saveUserInfo')
   try {
     const userInfo = await getUserInfo(token);
     const user = new User({
@@ -98,4 +106,4 @@ async function saveUserInfo(token) {
   }
 }
 
-export { authHandler, saveUserToken, changeNicknameHandler };
+export { authHandler, saveUserToken, changeNicknameHandler, loadMessages, isOwner};

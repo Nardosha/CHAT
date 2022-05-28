@@ -1,5 +1,6 @@
 export const UI = {
   BODY: document.querySelector("body"),
+  CHAT_NAME: document.querySelector('.chat_name'),
 
   POPUPS: {
     LINKS: document.querySelectorAll(".popup-link"),
@@ -26,7 +27,7 @@ export const UI = {
 
   MESSAGE: {
     OWN: document.querySelectorAll(".own"),
-    OWN_NICKNAME: document.querySelectorAll(".nickname"),
+    OWN_NICKNAME: document.querySelectorAll(".message__user.nickname"),
     INPUT: document.getElementById("input-message"),
     FORM: document.getElementById("form-message"),
     CONTAINER: document.querySelector(".message__container"),
@@ -38,7 +39,7 @@ export const URL = {
   AUTH: "https://mighty-cove-31255.herokuapp.com/api/user",
   USER_INFO: "https://mighty-cove-31255.herokuapp.com/api/user/me",
   HISTORY: "https://mighty-cove-31255.herokuapp.com/api/messages",
-  SOCKET: "https://mighty-cove-31255.herokuapp.com/api/user",
+  SOCKET: `ws://mighty-cove-31255.herokuapp.com/websockets?`,
 };
 
 export const usersList = new Map();

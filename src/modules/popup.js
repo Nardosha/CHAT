@@ -7,6 +7,7 @@ function getPopupName(link) {
 }
 
 function openPopup(currentPopup) {
+  console.log('openPopup')
   if (!currentPopup) return;
   const activePopup = document.querySelector(".popup._open");
 
@@ -26,6 +27,7 @@ function closePopup(currentPopup) {
 }
 
 function ready() {
+  console.log('redy')
   openPopup(UI.POPUPS.AUTH.POPUP);
 }
 

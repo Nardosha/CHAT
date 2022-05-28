@@ -70,7 +70,8 @@ export async function getMessageHistory(token) {
   try {
     const response = await fetch(URL.HISTORY, options);
     const data = await response.json();
-    return data.messages.splice(0, 5);
+    return data.messages.splice(data.messages.length - 21, data.messages.length-1);
+    // return data.messages
   } catch (e) {
     alert(e);
     console.log(`Ошибка: ${e}`);
